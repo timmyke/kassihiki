@@ -3,7 +3,14 @@ kassihiki
 
 Ohtu
 
-CI/CD: http://ohtu.jamo.io/view/miniprojektit/job/kassihiki-miniprojekti/
+CI: http://ohtu.jamo.io/view/miniprojektit/job/kassihiki-miniprojekti/
+App: http://kh-viitteidenhallinta.herokuapp.com/
+
+
+Asenna alkuun heroku remoteksi: 
+<pre>
+git remote add heroku git@heroku.com:kh-viitteidenhallinta.git
+</pre>
 
 
 Publishaus:
