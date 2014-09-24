@@ -3,8 +3,8 @@ kassihiki
 
 Ohtu
 
-CI: http://ohtu.jamo.io/view/miniprojektit/job/kassihiki-miniprojekti/
-App: http://kh-viitteidenhallinta.herokuapp.com/
+* CI: http://ohtu.jamo.io/view/miniprojektit/job/kassihiki-miniprojekti/
+* App: http://kh-viitteidenhallinta.herokuapp.com/
 
 
 Asenna alkuun heroku remoteksi: 
