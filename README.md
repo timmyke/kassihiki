@@ -12,5 +12,4 @@ Publishaus:
 git commit -m "Pakollinen commit message"
 git push origin master -- pushaa Github Master branchiin
 -- Tarkistetaan CI:n antama palaute. Jos näyttää hyvältä, niin
-git push heroku master -- pushaa Herokuunkassihiki
-```
+git push heroku master -- pushaa Herokuunkassihiki```
