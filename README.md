@@ -13,6 +13,13 @@ git remote add heroku git@heroku.com:kh-viitteidenhallinta.git
 </pre>
 
 
+Projektin kääntäminen ja käynnistäminen:
+
+<pre>
+mvn clean install
+java -jar target/dependency/webapp-runner.jar target/*.war
+</pre>
+
 Publishaus:
 
 <pre>
@@ -22,3 +29,4 @@ git push origin master -- pushaa githubiin, master branchiin
 -- Tarkistetaan CI:n antama palaute. Jos näyttää hyvältä, niin
 git push heroku master -- pushaa Herokuun
 </pre>
+
