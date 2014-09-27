@@ -58,7 +58,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach items="${viiteList}" var="person">
+                    <c:forEach items="${viiteList}" var="viite">
                         <tr>
                             <td>${viite.author}, ${viite.author}</td>
                             <td><form action="delete/${viite.id}" method="post"><input type="submit" class="btn btn-danger btn-mini" value="Delete"/></form></td>
