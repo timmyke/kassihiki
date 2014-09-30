@@ -8,38 +8,38 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import viitteidenhallinta.model.InProceedingsViite;
-import viitteidenhallinta.service.IViiteService;
+import viitteidenhallinta.model.BibTeXEntry;
+import viitteidenhallinta.service.BibTeXStorageService;
 
 import java.util.Map;
 
 @Controller("viite")
-public class ViiteController {
+public class EntryController {
 
     @Autowired
-    private IViiteService viiteService;
+    private BibTeXStorageService viiteService;
 
     @RequestMapping("/")
-    public String listViitte(Map<String, Object> map) {
+    public String listEntries(Map<String, Object> map) {
 
-        map.put("viite", new InProceedingsViite());
-        map.put("viiteList", viiteService.listViite());
+        map.put("viite", new BibTeXEntry());
+        map.put("viiteList", viiteService.listEntries());
 
         return "viite";
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public String addViite(@ModelAttribute("viite") InProceedingsViite viite, BindingResult result) {
+    public String addEntry(@ModelAttribute("viite") BibTeXEntry viite, BindingResult result) {
 
-        viiteService.addViite(viite);
+        viiteService.addEntry(viite);
 
         return "redirect:/viite/";
     }
 
     @RequestMapping("/delete/{viiteId}")
-    public String deleteViite(@PathVariable("viiteId") Integer personId) {
+    public String deleteEntry(@PathVariable("viiteId") Integer personId) {
 
-        viiteService.removeViite(personId);
+        viiteService.removeEntry(personId);
 
         return "redirect:/viite/";
     }

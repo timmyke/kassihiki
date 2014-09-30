@@ -3,7 +3,7 @@ package viitteidenhallinta.service;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import viitteidenhallinta.model.InProceedingsViite;
+import viitteidenhallinta.model.BibTeXEntry;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -13,26 +13,26 @@ import javax.persistence.criteria.Root;
 import java.util.List;
 
 @Service
-public class ViiteService implements IViiteService {
+public class BibTeXStorage implements BibTeXStorageService {
 
     @PersistenceContext
     EntityManager em;
         
     @Transactional
-    public void addViite(InProceedingsViite person) {
+    public void addEntry(BibTeXEntry person) {
         em.persist(person);
     }
 
     @Transactional
-    public List<InProceedingsViite> listViite() {
-        CriteriaQuery<InProceedingsViite> c = em.getCriteriaBuilder().createQuery(InProceedingsViite.class);
-        c.from(InProceedingsViite.class);
+    public List<BibTeXEntry> listEntries() {
+        CriteriaQuery<BibTeXEntry> c = em.getCriteriaBuilder().createQuery(BibTeXEntry.class);
+        c.from(BibTeXEntry.class);
         return em.createQuery(c).getResultList();
     }
 
     @Transactional
-    public void removeViite(Integer id) {
-        InProceedingsViite person = em.find(InProceedingsViite.class, id);
+    public void removeEntry(Integer id) {
+        BibTeXEntry person = em.find(BibTeXEntry.class, id);
         if (null != person) {
             em.remove(person);
         }
