@@ -11,16 +11,22 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Service
 public class ViiteService implements IViiteService {
 
     @PersistenceContext
     EntityManager em;
+    
+    @Autowired
+    public ViiteService(EntityManager em) {
+        this.em = em;
+    }
         
     @Transactional
-    public void addViite(InProceedingsViite person) {
-        em.persist(person);
+    public void addViite(InProceedingsViite viite) {
+        em.persist(viite);
     }
 
     @Transactional
