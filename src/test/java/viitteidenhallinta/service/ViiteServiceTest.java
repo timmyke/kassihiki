@@ -47,18 +47,41 @@ public class ViiteServiceTest {
         
     }
 
-    /**
-     * Test of addViite method, of class ViiteService.
-     */
+
     @Test
-    public void testAddViite() {
+    public void addViiteLisaaViitteen() {
         EntityManager em = mock(EntityManager.class);
         InProceedingsViite viite = new InProceedingsViite();
         
-        ViiteService instance = new ViiteService(em);
-        instance.addViite(viite);
+        ViiteService viitteet = new ViiteService(em);
+        viitteet.addViite(viite);
         
         verify(em).persist(viite);
     }
+    
+    @Test
+    public void viiteListausPalauttaaKaikkiViitteet() {
+        EntityManager em = mock(EntityManager.class);
+        InProceedingsViite viite = new InProceedingsViite();
+        
+        ViiteService viitteet = new ViiteService(em);
+        viitteet.addViite(viite);
+        
+        verify(em).createQuery(anyString());
+    }
+    
+    
+    @Test
+    public void viitePoistoPoistaaViitteet() {
+        EntityManager em = mock(EntityManager.class);
+        InProceedingsViite viite = new InProceedingsViite();
+        
+        ViiteService viitteet = new ViiteService(em);
+        viitteet.remove(viite);
+        
+        verify(em).remove(viite);
+    }
+    
+    
     
 }
