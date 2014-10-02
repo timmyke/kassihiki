@@ -20,6 +20,12 @@ mvn clean install
 java -jar target/dependency/webapp-runner.jar target/*.war
 </pre>
 
+
+Projektin voi nyt käynnistää kätevästi komennola:
+<pre>
+mvn jetty:run
+</pre>
+
 Publishaus:
 
 <pre>
