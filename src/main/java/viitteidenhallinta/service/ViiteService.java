@@ -18,12 +18,11 @@ public class ViiteService implements IViiteService {
 
     @PersistenceContext
     EntityManager em;
-    
-    @Autowired
-    public ViiteService(EntityManager em) {
+        
+    public void addEntityManager(EntityManager em) {
         this.em = em;
     }
-        
+    
     @Transactional
     public void addViite(InProceedingsViite viite) {
         em.persist(viite);

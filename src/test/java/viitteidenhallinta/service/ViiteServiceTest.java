@@ -54,7 +54,8 @@ public class ViiteServiceTest {
         EntityManager em = mock(EntityManager.class);
         InProceedingsViite viite = new InProceedingsViite();
         
-        ViiteService viitteet = new ViiteService(em);
+        ViiteService viitteet = new ViiteService();
+        viitteet.addEntityManager(em);
         viitteet.addViite(viite);
         
         verify(em).persist(viite);
@@ -81,7 +82,8 @@ public class ViiteServiceTest {
     public void viitePoistoPoistaaViitteet() {
         EntityManager em = mock(EntityManager.class);
         InProceedingsViite viite = new InProceedingsViite();
-        ViiteService viitteet = new ViiteService(em);
+        ViiteService viitteet = new ViiteService();
+        viitteet.addEntityManager(em);
         
         when(em.find(InProceedingsViite.class, 1))
                 .thenReturn(viite);
