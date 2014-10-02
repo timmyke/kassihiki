@@ -9,6 +9,7 @@
     <properties>
         <org.springframework.version>3.1.1.RELEASE</org.springframework.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <easyb.version>1.5</easyb.version>
     </properties>
 
     <dependencies>
@@ -76,9 +77,31 @@
             <version>1.9.0</version>
             <scope>test</scope>
         </dependency>
+        
+        <dependency>
+            <groupId>org.easyb</groupId>
+            <artifactId>easyb-core</artifactId>
+            <version>${easyb.version}</version>
+            <scope>test</scope>        
+        </dependency>
+        
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-all</artifactId>
+            <version>1.1</version>
+            <scope>test</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>2.13.0</version> 
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <build>
+        
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -91,6 +114,110 @@
                 <artifactId>maven-war-plugin</artifactId>
                 <version>2.2</version>
             </plugin>
+            
+            <!--
+            
+            Jetty
+            
+            -->
+            
+            <plugin>
+                <groupId>org.mortbay.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>7.4.2.v20110526</version>
+                <configuration>
+                    <!--
+                    
+                    POISTA NÄMÄ KOMMENTEISTA
+                    jos haluat että jetty käynnistää sovelluksen uudelleen 
+                    muutosten yhteydessä
+                    
+                    <scanIntervalSeconds>5</scanIntervalSeconds>
+                    <reload>automatic</reload>
+                    -->
+                    <systemProperties>
+                        <systemProperty>
+                            <name>jetty.port</name>
+                            <value>8090</value>
+                        </systemProperty>
+                    </systemProperties>
+                    <stopKey>foo</stopKey>
+                    <stopPort>9999</stopPort>
+                    <webAppConfig>
+                        <contextPath>/</contextPath>
+                    </webAppConfig>
+                </configuration>
+                
+                <executions>
+                    <execution>
+                        <id>start-jetty</id>
+                        <phase>pre-integration-test</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <scanIntervalSeconds>0</scanIntervalSeconds>
+                            <daemon>true</daemon>                           
+                        </configuration>
+                    </execution>
+
+                    <execution>
+                        <id>stop-jetty</id>
+                        <phase>post-integration-test</phase>
+                        <goals>
+                            <goal>stop</goal>
+                        </goals>
+                    </execution>
+
+                </executions>                
+            </plugin>
+            
+            <plugin>
+                <groupId>org.easyb</groupId>
+                <artifactId>maven-easyb-plugin</artifactId>
+                <version>1.4</version>
+                <executions>
+                    <execution>
+                        <phase>integration-test</phase>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <storyType>html</storyType>
+                    <storyReport>${basedir}/target/easyb/easyb-report.html
+                    </storyReport>
+                </configuration>
+            </plugin>            
+            
+            
+            <!-- 
+            
+            easyb 
+            
+            -->
+            
+            <plugin>
+                <groupId>org.easyb</groupId>
+                <artifactId>maven-easyb-plugin</artifactId>
+                <version>1.4</version>
+                <executions>
+                    <execution>
+                        <phase>integration-test</phase>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <storyType>html</storyType>
+                    <storyReport>${basedir}/target/easyb/easyb-report.html
+                    </storyReport>
+                </configuration>
+            </plugin>   
+            
+            
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
@@ -115,6 +242,8 @@
                 </executions>
             </plugin>
         </plugins>
+        
     </build>
+    
     <name>vitteidenhallinta</name>
 </project>
