@@ -13,21 +13,19 @@ git remote add heroku git@heroku.com:kh-viitteidenhallinta.git
 </pre>
 
 
-Projektin kääntäminen ja käynnistäminen:
 
+Projektin käynnistäminen:
+<pre>
+mvn jetty:run
+</pre>
+
+Heroku käynnistää projektin alla olevalla komennolla. Jos softa ei käynnisty herokussa, voit tutkia vikaa alla olevien komentojen avulla.
 <pre>
 mvn clean install
 java -jar target/dependency/webapp-runner.jar target/*.war
 </pre>
 
-
-Projektin voi nyt käynnistää kätevästi komennola:
-<pre>
-mvn jetty:run
-</pre>
-
 Publishaus:
-
 <pre>
 git add .
 git commit -m "Pakollinen commit message"
