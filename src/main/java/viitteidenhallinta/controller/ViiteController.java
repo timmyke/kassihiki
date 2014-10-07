@@ -13,7 +13,7 @@ import viitteidenhallinta.service.IViiteService;
 
 import java.util.Map;
 
-@Controller("viite")
+@Controller
 public class ViiteController {
 
     @Autowired
@@ -43,4 +43,15 @@ public class ViiteController {
 
         return "redirect:/viite/";
     }
+    
+    @RequestMapping("/bibtex/123")
+    public String aViite() {
+        return "bibtex";
+    }
+    
+    @RequestMapping("/bibtex/{id}")
+    public String bibtexViite(@PathVariable("id") Integer id, Map<String, Object> map) {
+        map.put("tiedot", viiteService.getViite(id));
+        return "bibtex";
+    } 
 }

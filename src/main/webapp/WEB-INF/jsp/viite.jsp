@@ -114,7 +114,7 @@
                     <tbody>
                     <c:forEach items="${viiteList}" var="viite">
                         <tr>
-                            <td>${viite.author}, ${viite.title}</td>
+                            <td><a href="/bibtex/${viite.id}">${viite.author}, ${viite.title}</a></td>
                             <td><form action="delete/${viite.id}" method="post"><input type="submit" class="btn btn-danger btn-mini" value="Delete"/></form></td>
                         </tr>
                     </c:forEach>
