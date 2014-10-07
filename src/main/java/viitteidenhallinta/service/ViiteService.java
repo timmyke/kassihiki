@@ -24,11 +24,13 @@ public class ViiteService implements IViiteService {
     }
     
     @Transactional
+    @Override
     public void addViite(InProceedingsViite viite) {
         em.persist(viite);
     }
 
     @Transactional
+    @Override
     public List<InProceedingsViite> listViite() {
         CriteriaQuery<InProceedingsViite> c = em.getCriteriaBuilder().createQuery(InProceedingsViite.class);
         c.from(InProceedingsViite.class);
@@ -36,6 +38,7 @@ public class ViiteService implements IViiteService {
     }
 
     @Transactional
+    @Override
     public void removeViite(Integer id) {
         InProceedingsViite person = em.find(InProceedingsViite.class, id);
         if (null != person) {
