@@ -47,11 +47,15 @@ public class InProceedingsViiteTest {
         InProceedingsViite viite = new InProceedingsViite();
         viite.setAuthor("Olli Hokkanen");
         viite.setBookTitle("Elämäni kolat");
+        viite.setTitle("Lumen kolaaminen");
+        viite.setYear(1995);
         String tulos = viite.getBibtex();
-        assertEquals(tulos, "@INPROCEEDINGS{Elämäni,\n"
+        assertEquals("@INPROCEEDINGS{Elämäni,\n"
                 + "author = {Olli Hokkanen},\n"
-                + "title = {Elämäni kolat},\n"
-                + "}");
+                + "title = {Lumen kolaaminen},\n"
+                + "booktitle = {Elämäni kolat},\n"
+                + "year = {1995}\n"
+                + "}", tulos);
         
     }
     
