@@ -13,7 +13,7 @@ import viitteidenhallinta.service.IViiteService;
 
 import java.util.Map;
 
-@Controller("viite")
+@Controller
 public class ViiteController {
 
     @Autowired
@@ -33,14 +33,14 @@ public class ViiteController {
 
         viiteService.addViite(viite);
 
-        return "redirect:/viite/";
+        return "redirect:/";
     }
 
     @RequestMapping("/delete/{viiteId}")
-    public String deleteViite(@PathVariable("viiteId") Integer personId) {
+    public String deleteViite(@PathVariable("viiteId") Integer viiteId) {
 
-        viiteService.removeViite(personId);
+        viiteService.removeViite(viiteId);
 
-        return "redirect:/viite/";
+        return "redirect:/";
     }
 }
