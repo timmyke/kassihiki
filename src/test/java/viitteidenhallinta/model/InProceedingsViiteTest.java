@@ -51,10 +51,10 @@ public class InProceedingsViiteTest {
         viite.setYear(1995);
         String tulos = viite.getBibtex();
         assertEquals("@INPROCEEDINGS{Elämäni,\n"
-                + "author = {Olli Hokkanen},\n"
-                + "title = {Lumen kolaaminen},\n"
-                + "booktitle = {Elämäni kolat},\n"
-                + "year = {1995}\n"
+                + "\tauthor = {Olli Hokkanen},\n"
+                + "\ttitle = {Lumen kolaaminen},\n"
+                + "\tbooktitle = {Elämäni kolat},\n"
+                + "\tyear = {1995}\n"
                 + "}", tulos);
         
     }

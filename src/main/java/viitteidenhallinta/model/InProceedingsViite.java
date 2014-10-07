@@ -168,48 +168,48 @@ public class InProceedingsViite {
     public String getBibtex() {
         String palautettava;
         palautettava="@INPROCEEDINGS{"+ this.book_title.split(" ")[0] + ",\n";
-        palautettava += "author = {" + this.author + "},\n" +
-                "title = {" + this.title + "},\n"
-                + "booktitle = {" + this.book_title + "},\n";
+        palautettava += "\tauthor = {" + this.author + "},\n" +
+                "\ttitle = {" + this.title + "},\n"
+                + "\tbooktitle = {" + this.book_title + "},\n";
         if (!(this.o_month==0)) {
-            palautettava += "month = {" + this.o_month + "},\n";
+            palautettava += "\tmonth = {" + this.o_month + "},\n";
         }
         if (!(this.o_pages==0)) {
-            palautettava += "pages = {" + this.o_pages + "},\n";
+            palautettava += "\tpages = {" + this.o_pages + "},\n";
         }
         if (this.o_editor!=null) { 
-            palautettava += "editor = {this.o_editor},\n";
+            palautettava += "\teditor = {this.o_editor},\n";
         }
         if (this.o_volumeOrNumber!=null) { 
-            palautettava += "volume = {"+this.o_volumeOrNumber+"},\n";
+            palautettava += "\tvolume = {"+this.o_volumeOrNumber+"},\n";
         }
         if (this.o_series!=null) { 
-            palautettava += "series = {"+this.o_series+"},\n";
+            palautettava += "\tseries = {"+this.o_series+"},\n";
         }
         if (this.o_pages!=0) { 
-            palautettava += "pages = {"+this.o_pages+"},\n";
+            palautettava += "\tpages = {"+this.o_pages+"},\n";
         }
         if (this.o_address!=null) {
-            palautettava += "address = {"+this.o_address+"},\n";
+            palautettava += "\taddress = {"+this.o_address+"},\n";
         }
         if (this.o_month!=0) { 
-            palautettava += "month = {"+this.o_month+"},\n";
+            palautettava += "\tmonth = {"+this.o_month+"},\n";
         }
         if (this.o_organization!=null) { 
-            palautettava += "organization = {"+this.o_organization+"},\n";
+            palautettava += "\torganization = {"+this.o_organization+"},\n";
         }
         if (this.o_publisher!=null) { 
-            palautettava += "publisher = {"+this.o_publisher+"},\n";
+            palautettava += "\tpublisher = {"+this.o_publisher+"},\n";
         }
         if (this.o_note!=null) { 
-            palautettava += "note = {"+this.o_note+"},\n";
+            palautettava += "\tnote = {"+this.o_note+"},\n";
         }
         if (this.o_key!=null) { 
-            palautettava += "key = {"+this.o_key+"},\n";
+            palautettava += "\tkey = {"+this.o_key+"},\n";
         }
 
         
-        palautettava += "year = {" + this.year + "}\n" +
+        palautettava += "\tyear = {" + this.year + "}\n" +
                 "}";
         //palautettava += "\n}";
         return palautettava;

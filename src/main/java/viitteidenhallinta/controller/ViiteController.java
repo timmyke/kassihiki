@@ -43,4 +43,10 @@ public class ViiteController {
 
         return "redirect:/";
     }
+    
+    @RequestMapping("/bibtex/{id}")
+    public String bibtexViite(@PathVariable("id") Integer id, Map<String, Object> map) {
+        map.put("tiedot", viiteService.getViite(id).getBibtex());
+        return "bibtex";
+    }
 }
