@@ -180,15 +180,33 @@ public class InProceedingsViite {
         if (this.o_editor==null) { 
             palautettava += "editor = {this.o_editor},\n";
         }
-if (this.o_volumeOrNumber==null) { palautettava += "volume = {"+this.o_volumeOrNumber+"},\n";}
-if (this.o_series==null) { palautettava += "series = {"+this.o_series+"},\n";}
-if (this.o_pages==0) { palautettava += "pages = {"+this.o_pages+"},\n";}
-if (this.o_address==null) { palautettava += "address = {"+this.o_address+"},\n";}
-if (this.o_month==0) { palautettava += "month = {"+this.o_month+"},\n";}
-if (this.o_organization==null) { palautettava += "organization = {"+this.o_organization+"},\n";}
-if (this.o_publisher==null) { palautettava += "publisher = {"+this.o_publisher+"},\n";}
-if (this.o_note==null) { palautettava += "note = {"+this.o_note+"},\n";}
-if (this.o_key==null) { palautettava += "key = {"+this.o_key+"},\n";}
+        if (this.o_volumeOrNumber==null) { 
+            palautettava += "volume = {"+this.o_volumeOrNumber+"},\n";
+        }
+        if (this.o_series==null) { 
+            palautettava += "series = {"+this.o_series+"},\n";
+        }
+        if (this.o_pages==0) { 
+            palautettava += "pages = {"+this.o_pages+"},\n";
+        }
+        if (this.o_address==null) {
+            palautettava += "address = {"+this.o_address+"},\n";
+        }
+        if (this.o_month==0) { 
+            palautettava += "month = {"+this.o_month+"},\n";
+        }
+        if (this.o_organization==null) { 
+            palautettava += "organization = {"+this.o_organization+"},\n";
+        }
+        if (this.o_publisher==null) { 
+            palautettava += "publisher = {"+this.o_publisher+"},\n";
+        }
+        if (this.o_note==null) { 
+            palautettava += "note = {"+this.o_note+"},\n";
+        }
+        if (this.o_key==null) { 
+            palautettava += "key = {"+this.o_key+"},\n";
+        }
 
         
         palautettava += "year = {" + this.year + "}\n" +
