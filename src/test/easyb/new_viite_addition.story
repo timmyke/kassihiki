@@ -3,6 +3,7 @@ import ohtu.authentication.*
 import org.openqa.selenium.*
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
+
 description """A new record can be added"""
 // js-kirjasto aiheuttaa harmia, joten html warnit otetaan pois näkvyistä
 java.util.logging.Logger.getLogger("com.gargoylesoftware.htmlunit").setLevel(java.util.logging.Level.OFF);
