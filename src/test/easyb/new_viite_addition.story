@@ -18,7 +18,7 @@ scenario "Viite add page exists", {
         driver.get(urli);
     }
 
-    when 'Viite link is clikced', {
+    when 'Viite link is clicked', {
        element = driver.findElement(By.linkText("viitteet"));       
        element.click();
     }
@@ -36,7 +36,7 @@ scenario "can add a new viite", {
         element.click();
     }
 
-    when 'correct values are entered, {
+    when 'correct values are entered', {
        
     }
 
