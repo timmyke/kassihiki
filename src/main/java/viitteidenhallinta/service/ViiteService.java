@@ -36,6 +36,12 @@ public class ViiteService implements IViiteService {
         c.from(InProceedingsViite.class);
         return em.createQuery(c).getResultList();
     }
+    
+    @Transactional
+    @Override
+    public InProceedingsViite getViite(Integer id) {
+        return em.find(InProceedingsViite.class,id);
+    }
 
     @Transactional
     @Override

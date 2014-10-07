@@ -10,4 +10,5 @@ public interface IViiteService {
     public void addViite(InProceedingsViite person);
     public List<InProceedingsViite> listViite();
     public void removeViite(Integer id);
+    public InProceedingsViite getViite(Integer id);
 }
