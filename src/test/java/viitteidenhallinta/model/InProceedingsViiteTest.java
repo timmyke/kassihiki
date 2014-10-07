@@ -46,7 +46,7 @@ public class InProceedingsViiteTest {
     public void testGetBibtex() {
         InProceedingsViite viite = new InProceedingsViite();
         viite.setAuthor("Olli Hokkanen");
-        viite.setTitle("Elämäni kolat");
+        viite.setBookTitle("Elämäni kolat");
         String tulos = viite.getBibtex();
         assertEquals(tulos, "@INPROCEEDINGS{Elämäni,\n"
                 + "author = {Olli Hokkanen},\n"
