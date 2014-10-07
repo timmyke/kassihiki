@@ -11,9 +11,9 @@ public class InProceedingsViite {
     @GeneratedValue
     private Integer id;
 
-    private String Author;
+    private String author;
 
-    private String Title;
+    private String title;
 
 
     public Integer getId() {
@@ -25,19 +25,28 @@ public class InProceedingsViite {
     }
 
     public String getAuthor() {
-        return Author;
+        return author;
     }
 
     public void setAuthor(String name) {
-        this.Author = name;
+        this.author = name;
     }
 
     public String getTitle() {
-        return Title;
+        return title;
     }
 
     public void setTitle(String lastName) {
-        this.Title = lastName;
+        this.title = lastName;
     }
 
+    public String getBibtex() {
+        String palautettava;
+        palautettava="@INPROCEEDINGS{"+ this.title.split(" ")[0] + ",\n";
+        palautettava += "author = {" + this.author + "},\n" +
+                "title = {" + this.title + "},\n" +
+                "}";
+        return palautettava;
+    }
+    
 }
