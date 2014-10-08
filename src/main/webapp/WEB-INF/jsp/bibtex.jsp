@@ -22,6 +22,6 @@
     <!-- /// -->
     <body>
         <h1>Kopioi tästä bibtex-muotoinen viite</h1>
-                <pre>"${tiedot}"</pre>               
+                <pre>${tiedot}</pre>               
     </body>
 </html>
