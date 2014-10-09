@@ -1,5 +1,7 @@
 package viitteidenhallinta.controller;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -48,5 +50,14 @@ public class ViiteController {
     public String bibtexViite(@PathVariable("id") Integer id, Map<String, Object> map) {
         map.put("tiedot", viiteService.getViite(id).getBibtex());
         return "bibtex";
+    }
+    
+    @RequestMapping("/bibliography")
+    public String displayBibliography(Map<String, Object> map) {
+        List<String> l = new ArrayList<String>();
+        for (InProceedingsViite v:viiteService.listViite())
+            l.add(v.getBibtex());
+        map.put("viiteList", l);
+        return "bibliography";
     }
 }

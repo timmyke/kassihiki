@@ -210,7 +210,7 @@ public class InProceedingsViite {
 
         
         palautettava += "\tyear = {" + this.year + "}\n" +
-                "}";
+                "}\n";
         //palautettava += "\n}";
         return palautettava;
     }

@@ -103,7 +103,7 @@
 
 
             <c:if  test="${!empty viiteList}">
-                <h3>Viitteet</h3>
+                <h3><a href="/bibliography">Viitteet</a></h3>
                 <table class="table table-bordered table-striped">
                     <thead>
                     <tr>

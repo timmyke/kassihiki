@@ -55,7 +55,7 @@ public class InProceedingsViiteTest {
                 + "\ttitle = {Lumen kolaaminen},\n"
                 + "\tbooktitle = {Elämäni kolat},\n"
                 + "\tyear = {1995}\n"
-                + "}", tulos);
+                + "}\n", tulos);
         
     }
     
