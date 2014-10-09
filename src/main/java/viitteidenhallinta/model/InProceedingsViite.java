@@ -165,9 +165,31 @@ public class InProceedingsViite {
         this.book_title = lastName;
     }
 
+    
+
+    public static String muodostaViiteAvain(String nimi) {
+        
+        String palautettava="";
+        
+        
+        for (int i = 0; i < nimi.length(); i++) {
+            if (nimi.charAt(i)=='ä') {
+                palautettava+="a";
+            }
+            else if (nimi.charAt(i)=='ö') {
+                palautettava+="o";
+            }
+            else if (nimi.charAt(i)=='å') {
+                palautettava+="a";
+            }
+            else palautettava+=""+nimi.charAt(i);
+        }
+        return palautettava;
+    }
+    
     public String getBibtex() {
         String palautettava;
-        palautettava="@INPROCEEDINGS{"+ this.book_title.split(" ")[0] + ",\n";
+        palautettava="@INPROCEEDINGS{"+ this.muodostaViiteAvain(this.book_title.split(" ")[0]) + ",\n";
         palautettava += "\tauthor = {" + this.author + "},\n" +
                 "\ttitle = {" + this.title + "},\n"
                 + "\tbooktitle = {" + this.book_title + "},\n";
@@ -177,34 +199,34 @@ public class InProceedingsViite {
         if (!(this.o_pages==0)) {
             palautettava += "\tpages = {" + this.o_pages + "},\n";
         }
-        if (this.o_editor!=null) { 
-            palautettava += "\teditor = {this.o_editor},\n";
+        if (!this.o_editor.equals("")) { 
+            palautettava += "\teditor = {"+this.o_editor+"},\n";
         }
-        if (this.o_volumeOrNumber!=null) { 
+        if (!this.o_volumeOrNumber.equals("")) { 
             palautettava += "\tvolume = {"+this.o_volumeOrNumber+"},\n";
         }
-        if (this.o_series!=null) { 
+        if (!this.o_series.equals("")) { 
             palautettava += "\tseries = {"+this.o_series+"},\n";
         }
         if (this.o_pages!=0) { 
             palautettava += "\tpages = {"+this.o_pages+"},\n";
         }
-        if (this.o_address!=null) {
+        if (!this.o_address.equals("")) {
             palautettava += "\taddress = {"+this.o_address+"},\n";
         }
         if (this.o_month!=0) { 
             palautettava += "\tmonth = {"+this.o_month+"},\n";
         }
-        if (this.o_organization!=null) { 
+        if (!this.o_organization.equals("")) { 
             palautettava += "\torganization = {"+this.o_organization+"},\n";
         }
-        if (this.o_publisher!=null) { 
+        if (!this.o_publisher.equals("")) { 
             palautettava += "\tpublisher = {"+this.o_publisher+"},\n";
         }
-        if (this.o_note!=null) { 
+        if (!this.o_note.equals("")) { 
             palautettava += "\tnote = {"+this.o_note+"},\n";
         }
-        if (this.o_key!=null) { 
+        if (!this.o_key.equals("")) { 
             palautettava += "\tkey = {"+this.o_key+"},\n";
         }
 
@@ -213,6 +235,6 @@ public class InProceedingsViite {
                 "}\n";
         //palautettava += "\n}";
         return palautettava;
-    }
+    }    
     
 }
