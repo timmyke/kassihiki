@@ -1,35 +1,90 @@
-\documentclass[a4paper]{article}
+\documentclass[10pt,a4paper]{article}
 \usepackage[finnish]{babel}
 \usepackage{geometry}
 \usepackage[utf8]{inputenc}
-\author{Juri Liukkonen, Risto Tuomainen, Timi Suominen, mitkäs teidän oikeet nimet oli?}
+\author{Juri Liukkonen,
+	Risto Tuomainen, Timi Suominen, Esa Lindqvist}
+
 \title{Kassihiki-ryhmän miniprojektin loppuraportti}
+
 \begin{document}
 \maketitle
-\noindent
-Ryhmämme toteutti internetin kautta käytettävän viitteidenhallintajärjestelmän. Jatkuva integraatio toteutettiin Jenkingsin avulla, ja sovelluksessa käytettiin Spring-sovelluskehystä. 
 
-Ensimmäisessä sprintissä rakennettiin sovelluskehityksessä tarvittavaa infrastruktuuria, ja toteuttiin käyttöliittymää esittelevä sivu. Olimme erityisesti alussa monien haasteiden edessä, sillä osalle ryhmästä spring oli täysin vieras teknologia. Niinpä osa ryhmän jäsenistä käytti sprintin aikana neljän tunnin työpanoksensa teknologiaan tutustumiseen, mikä vaikutti tietysti kielteisesti tuottavuuteen. Infrastruktuurin pystyttäminen ei ollut aivan helppoa muutenkaan, ja siihen kului melko paljon tunteja.  
+\section*{}
+Ryhmämme toteutti internetin kautta käytettävän
+viitteidenhallintajärjestelmän. Jatkuva integraatio toteutettiin
+Jenkingsin avulla, ja sovelluksessa käytettiin Spring-sovelluskehystä.
 
-Toisessa sprintissä tarvittu infrastruktuuri oli pystyssä alusta saakka, mutta edelleen osa ryhmästä oli käytännössä sivussa koodaamisesta lukemassa "Spring MVC - Getting Started" -opasta. Projekti ei juurikaan edennyt tämän sprintin aikana, vaan monet tehtävät siirtyivät suoraan seuraavaan sprinttiin. 
+\section*{Ensimmäinen sprintti}
+Ensimmäisessä sprintissä rakennettiin sovelluskehityksessä
+tarvittavaa infrastruktuuria, ja toteuttiin käyttöliittymää
+esittelevä sivu. Olimme erityisesti alussa monien haasteiden edessä,
+sillä suurimmalle osalle ryhmästä spring oli täysin vieras teknologia.
+Niinpä osa ryhmän jäsenistä käytti sprintin aikana neljän tunnin työpanoksensa
+teknologiaan tutustumiseen, mikä vaikutti tietysti kielteisesti
+tuottavuuteen. Infrastruktuurin pystyttäminen ei ollut aivan helppoa
+muutenkaan, ja siihen kului melko paljon tunteja.
 
-Kolmannessa sprintissä ryhmä kokoontui aiemmasta poiketin koodaamaan yhdessä. Tässäkään ei tosin yleisistä syistä johtuen saavutettu niin suurta työtehoa kuin olisi voinut toivoa, mutta joka tapauksessa organisointi sujui tällä kertaa jouhevammin. Kolmannessa sprintissä ydintoiminnallisuus saatiin toteutettua, ja demotilaisuudessa saavutettiinkin suuri voitto tämän työn tuloksena.
+Ongelmia tuotti myös projektinhallintainfrastruktuurin pystyttäminen. Trello
+ei sovellu projektinhallintatyökaluksi, mutta jo pelkästään tunnustenkin
+luominen vie hirveästi aikaa.
 
-Yleisesti ottaen kommunikaatio ryhmän sisällä ei toiminut parhaalla mahdollisella tavalla. Ryhmä käytti irc-kanavaa keskusteluun, mutta työnjaossa oli hieman epäselvyyttä. Lisäksi kasvokkain olisi ollut helpompi opastaa niitä ryhmän jäseniä, jotka olivat aivan kujalla springin käytöstä.  
+Prosessin noudattamisessa ongelmia tuotti projektin storyjen jakaminen
+mielekkään kokoisiin tehtäviin ja niiden vaatiman työpanoksen
+arviointi. Tämä johtui sekä ryhmän jäsenten kokemattomuudesta yleensäkin ja
+käytetyn sovelluskehyksen vieraudesta.
 
+\section*{Toinen sprintti}
+Toisessa sprintissä tarvittu infrastruktuuri oli pystyssä alusta saakka,
+mutta edelleen osa ryhmästä oli käytännössä sivussa koodaamisesta
+lukemassa "Spring MVC - Getting Started" -opasta. Projekti ei juurikaan
+edennyt tämän sprintin aikana, vaan monet tehtävät siirtyivät
+suoraan seuraavaan sprinttiin.
 
-Tuomainen oppi projektin aikana paljon web-sovellusten toteuttamisesta javalla ja springillä. Lisäksi monin tavoin haasteellinen organisointi opetti paljon huonoista käytänteistä ja kirkasti selkeän kommunikaatioin tärkeyden ryhmätyön kannalta. 
+Koodaamisen kannalta ongelmallista oli testaaminen. Tietokanta-asioiden
+testaaminen Springissä edellyttää huomattavan paljon tietämystä sen
+arkkitehtuurista, mitä ryhmällä ei siinä vaiheessa ollut. (Eikä itse
+asiassa ole vieläkään.) Testi-infran saattaminen kuntoon mahdollisimman
+aikaisessa vaiheessa olisi saattanut helpottaa projektin etenemistä.
 
-Suominen oppi projektin aikana ryhmädynamiikasta ja siitä, kuinka tärkeää tiimin on kokoontua yhdessä johonkin tilaan työstämään projektia.
+Prosessin noudattaminen jäi jälleen kerran kaiken muun varjoon. Tehtävien
+toteutuksen vaativuus-/aika-arviot eivät pitäneet. Osasyynä voi olla
+burndown chartin puuttuminen, joka olisi helpottanut tahdin seuraamista.
+tekemättä, Asioiden valmiiksi
+merkkaaminen projektinhallintasoftaan oli puutteellista, koska asioiden
+saattaminen valmiiksi määritelmän mukaisella tavalla oli vaikeaa
+testaamisen vajavaisuudesta johtuen. Myös joustavuus/agilen noudattaminen
+tuotti ongelmia. 
 
-Toisaalta vaikka kaikki ei ollut helppoa, lopputuloksena syntyi kuitenkin toimiva sovellus. Projekti oli muutenkin hyvin opettavainen kokemus.
+\section*{Kolmas sprintti}
+Kolmannessa sprintissä ryhmä kokoontui aiemmasta poiketin koodaamaan
+yhdessä. Tässäkään ei tosin yleisistä syistä johtuen saavutettu
+niin suurta työtehoa kuin olisi voinut toivoa, mutta joka tapauksessa
+organisointi sujui tällä kertaa jouhevammin. Kolmannessa sprintissä
+ydintoiminnallisuus saatiin toteutettua, ja demotilaisuudessa
+saavutettiinkin suuri voitto tämän työn tuloksena.
 
+Yleisesti ottaen kommunikaatio ryhmän sisällä ei toiminut parhaalla
+mahdollisella tavalla. Ryhmä käytti irc-kanavaa keskusteluun, mutta
+työnjaossa oli hieman epäselvyyttä. Lisäksi kasvokkain olisi ollut
+helpompi opastaa niitä ryhmän jäseniä, jotka olivat aivan kujalla
+Springin käytöstä.
 
+Prosessin noudattamisesta luovuttiin kolmannella viikolla ihan täysin.
 
+Tuomainen oppi projektin aikana paljon web-sovellusten toteuttamisesta
+javalla ja springillä. Lisäksi monin tavoin haasteellinen organisointi
+opetti paljon huonoista käytänteistä ja kirkasti selkeän
+kommunikaatioin tärkeyden ryhmätyön kannalta.
 
+Suominen oppi projektin aikana ryhmädynamiikasta ja siitä, kuinka
+tärkeää tiimin on kokoontua yhdessä johonkin tilaan työstämään
+projektia.
 
+Liukkonen oppi testaamisen tärkeydestä ryhmässä toteutettavan projektin
+onnistumisen kannalta. (Ja kirjoittamaan itsestään kolmannessa persoonassa.)
 
-
-
+Toisaalta vaikka kaikki ei ollut helppoa, lopputuloksena syntyi kuitenkin
+toimiva sovellus (LOL). Projekti oli muutenkin hyvin opettavainen kokemus.
 
 \end{document}
