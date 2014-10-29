@@ -5,6 +5,7 @@ Ohtu
 
 * CI: http://ohtu.jamo.io/view/miniprojektit/job/kassihiki-miniprojekti/
 * App: http://kh-viitteidenhallinta.herokuapp.com/
+* Loppuraportti: https://github.com/timmyke/kassihiki/blob/master/loppuraportti.pdf?raw=true
 
 
 Asenna alkuun heroku remoteksi: 
