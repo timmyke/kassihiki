@@ -6,12 +6,12 @@
 package viite.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import viitteidenhallinta.model.InProceedingsViite;
+import viitteidenhallinta.model.Project;
 
 /**
  *
  * @author tim
  */
-public interface IViiteRepository extends JpaRepository<InProceedingsViite, Long> {
+public interface IViiteRepository extends JpaRepository<Project, Long> {
     
 }

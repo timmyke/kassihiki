@@ -3,12 +3,12 @@ package viitteidenhallinta.service;
 
 import java.util.List;
 
-import viitteidenhallinta.model.InProceedingsViite;
+import viitteidenhallinta.model.Project;
 
 public interface IViiteService {
     
-    public void addViite(InProceedingsViite person);
-    public List<InProceedingsViite> listViite();
+    public void addViite(Project project);
+    public List<Project> listViite();
     public void removeViite(Integer id);
-    public InProceedingsViite getViite(Integer id);
+    public Project getViite(Integer id);
 }

@@ -14,7 +14,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import viitteidenhallinta.model.InProceedingsViite;
+import viitteidenhallinta.model.Project;
 import static org.mockito.Mockito.*;
 
 /**
@@ -52,7 +52,7 @@ public class ViiteServiceTest {
     @Test
     public void addViiteLisaaViitteen() {
         EntityManager em = mock(EntityManager.class);
-        InProceedingsViite viite = new InProceedingsViite();
+        Project viite = new Project();
         
         ViiteService viitteet = new ViiteService();
         viitteet.addEntityManager(em);
@@ -64,7 +64,7 @@ public class ViiteServiceTest {
 //    @Test
 //    public void viiteListausPalauttaaKaikkiViitteet() {
 //        EntityManager em = mock(EntityManager.class);
-//        InProceedingsViite viite = new InProceedingsViite();
+//        Project viite = new Project();
 //        ViiteService viitteet = new ViiteService(em);
 //        
 //        when(em.createQuery(CriteriaQuery.class).getResultList())
@@ -81,11 +81,11 @@ public class ViiteServiceTest {
     @Test
     public void viitePoistoPoistaaViitteet() {
         EntityManager em = mock(EntityManager.class);
-        InProceedingsViite viite = new InProceedingsViite();
+        Project viite = new Project();
         ViiteService viitteet = new ViiteService();
         viitteet.addEntityManager(em);
         
-        when(em.find(InProceedingsViite.class, 1))
+        when(em.find(Project.class, 1))
                 .thenReturn(viite);
         
         viitteet.removeViite(1);
